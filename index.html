@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe Weather Forecast</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Europe Weather Forecast</h1>
+            <p class="subtitle">Real-time weather information for major European cities</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="city-select">Select City:</label>
+                <select id="city-select">
+                    <!-- Cities will be populated by JavaScript -->
+                </select>
+            </div>
+            <button id="refresh-btn" class="refresh-btn">🔄 Refresh</button>
+        </div>
+
+        <div id="weather-container" class="weather-container">
+            <div class="loading">Select a city to view weather</div>
+        </div>
+
+        <footer>
+            <p>Weather data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+
+    <script src="data/cities.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
