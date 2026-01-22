@@ -124,7 +124,7 @@ function displayWeatherData(data) {
         humidity.textContent = `${data.main.humidity}%`;
     }
     
-    // Update wind speed
+    // Update wind speed (convert from m/s to km/h)
     if (windSpeed) {
         windSpeed.textContent = `${Math.round(data.wind.speed * 3.6)} km/h`;
     }
@@ -144,7 +144,7 @@ function displayWeatherData(data) {
 
 // Display sample weather data for demo
 function displaySampleWeather() {
-    const selectedCity = citySelect.options[citySelect.selectedIndex].text.split(',')[0];
+    const selectedCity = citySelect.selectedIndex >= 0 ? citySelect.options[citySelect.selectedIndex].text.split(',')[0] : 'Unknown City';
     
     if (cityName) cityName.textContent = selectedCity;
     if (temperature) temperature.textContent = '18°C';
