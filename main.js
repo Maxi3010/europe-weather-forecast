@@ -1,7 +1,10 @@
 // Weather forecast application logic
 class WeatherApp {
     constructor() {
-        this.apiKey = 'YOUR_API_KEY'; // Replace with actual OpenWeatherMap API key
+        // NOTE: Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+        // Get a free API key at: https://openweathermap.org/api
+        // This is intentionally a placeholder to prevent exposure of real API keys in source control
+        this.apiKey = 'YOUR_API_KEY';
         this.currentCity = null;
         this.init();
     }
@@ -76,7 +79,7 @@ class WeatherApp {
         const feelsLike = Math.round(data.main.feels_like);
         const description = data.weather[0].description;
         const humidity = data.main.humidity;
-        const windSpeed = Math.round(data.wind.speed * 3.6); // Convert m/s to km/h
+        const windSpeed = data.wind ? Math.round(data.wind.speed * 3.6) : 0; // Convert m/s to km/h
         const icon = data.weather[0].icon;
 
         weatherContainer.innerHTML = `
