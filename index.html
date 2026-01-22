@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="7-day weather forecast for European cities using 7Timer API">
+    <title>Europe Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Europe Weather Forecast</h1>
+            <p class="subtitle">7-Day Weather Predictions</p>
+        </header>
+
+        <main>
+            <section class="location-selector">
+                <h2>Select a Location</h2>
+                <div class="city-buttons">
+                    <button class="city-btn" data-lat="48.8566" data-lon="2.3522">Paris, France</button>
+                    <button class="city-btn" data-lat="52.5200" data-lon="13.4050">Berlin, Germany</button>
+                    <button class="city-btn" data-lat="41.9028" data-lon="12.4964">Rome, Italy</button>
+                    <button class="city-btn" data-lat="40.4168" data-lon="-3.7038">Madrid, Spain</button>
+                    <button class="city-btn" data-lat="51.5074" data-lon="-0.1278">London, UK</button>
+                </div>
+            </section>
+
+            <section class="weather-display" id="weatherDisplay">
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Loading weather data...</p>
+                </div>
+                
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    <p>⚠️ Unable to fetch weather data. Please try again later.</p>
+                </div>
+
+                <div class="forecast-container" id="forecastContainer" style="display: none;">
+                    <h2 id="locationName">Weather Forecast</h2>
+                    <div class="forecast-grid" id="forecastGrid">
+                        <!-- Forecast cards will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Weather data provided by <a href="https://www.7timer.info/" target="_blank" rel="noopener">7Timer API</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
