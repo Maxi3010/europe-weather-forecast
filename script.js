@@ -18,10 +18,18 @@ const cityButtons = document.querySelectorAll('.city-btn');
  */
 async function fetchWeatherData(latitude, longitude) {
     try {
+        // Validate coordinates to prevent URL injection
+        const lat = parseFloat(latitude);
+        const lon = parseFloat(longitude);
+        
+        if (isNaN(lat) || isNaN(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
+            throw new Error('Invalid coordinates provided');
+        }
+        
         // Construct the API URL with latitude, longitude, and required parameters
         // product=civil: Returns civil weather data (suitable for general public)
         // output=json: Returns data in JSON format
-        const apiUrl = `${WEATHER_API_BASE_URL}?lon=${longitude}&lat=${latitude}&product=civil&output=json`;
+        const apiUrl = `${WEATHER_API_BASE_URL}?lon=${lon}&lat=${lat}&product=civil&output=json`;
         
         // Fetch weather data using async/await
         const response = await fetch(apiUrl);
@@ -136,7 +144,8 @@ function displayWeatherForecast(weatherData, cityName) {
         // Extract weather information
         const weatherCode = day.weather;
         const temperature = day.temp2m; // Temperature at 2 meters (in Celsius)
-        const windSpeed = day.wind10m ? day.wind10m.speed : 'N/A'; // Wind speed
+        // Wind speed - 7Timer API may structure wind data differently, so we handle multiple formats
+        const windSpeed = day.wind10m?.speed || day.wind10m || 'N/A'; 
         const weatherDesc = getWeatherDescription(weatherCode);
         const weatherIcon = getWeatherIcon(weatherCode);
         const dateStr = formatDate(index);
@@ -231,9 +240,9 @@ function initializeEventListeners() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeEventListeners();
     
-    // Load default city (Paris) on page load
-    const defaultButton = cityButtons[0];
-    if (defaultButton) {
+    // Load default city (Paris) on page load if city buttons exist
+    if (cityButtons.length > 0) {
+        const defaultButton = cityButtons[0];
         const latitude = parseFloat(defaultButton.dataset.lat);
         const longitude = parseFloat(defaultButton.dataset.lon);
         const cityName = defaultButton.textContent;
