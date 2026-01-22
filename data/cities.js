@@ -1,0 +1,22 @@
+const europeanCities = [
+    { name: "London", country: "United Kingdom", lat: 51.5074, lon: -0.1278 },
+    { name: "Paris", country: "France", lat: 48.8566, lon: 2.3522 },
+    { name: "Berlin", country: "Germany", lat: 52.5200, lon: 13.4050 },
+    { name: "Madrid", country: "Spain", lat: 40.4168, lon: -3.7038 },
+    { name: "Rome", country: "Italy", lat: 41.9028, lon: 12.4964 },
+    { name: "Amsterdam", country: "Netherlands", lat: 52.3676, lon: 4.9041 },
+    { name: "Brussels", country: "Belgium", lat: 50.8503, lon: 4.3517 },
+    { name: "Vienna", country: "Austria", lat: 48.2082, lon: 16.3738 },
+    { name: "Prague", country: "Czech Republic", lat: 50.0755, lon: 14.4378 },
+    { name: "Warsaw", country: "Poland", lat: 52.2297, lon: 21.0122 },
+    { name: "Budapest", country: "Hungary", lat: 47.4979, lon: 19.0402 },
+    { name: "Stockholm", country: "Sweden", lat: 59.3293, lon: 18.0686 },
+    { name: "Copenhagen", country: "Denmark", lat: 55.6761, lon: 12.5683 },
+    { name: "Oslo", country: "Norway", lat: 59.9139, lon: 10.7522 },
+    { name: "Helsinki", country: "Finland", lat: 60.1699, lon: 24.9384 },
+    { name: "Athens", country: "Greece", lat: 37.9838, lon: 23.7275 },
+    { name: "Lisbon", country: "Portugal", lat: 38.7223, lon: -9.1393 },
+    { name: "Dublin", country: "Ireland", lat: 53.3498, lon: -6.2603 },
+    { name: "Zurich", country: "Switzerland", lat: 47.3769, lon: 8.5417 },
+    { name: "Barcelona", country: "Spain", lat: 41.3851, lon: 2.1734 }
+];

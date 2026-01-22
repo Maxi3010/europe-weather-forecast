@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <ellipse cx="40" cy="30" rx="25" ry="20" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="2"/>
+  <ellipse cx="60" cy="30" rx="25" ry="20" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="25" y="65" font-size="20" fill="#87CEEB">❄</text>
+  <text x="45" y="65" font-size="20" fill="#87CEEB">❄</text>
+  <text x="65" y="65" font-size="20" fill="#87CEEB">❄</text>
+  <text x="35" y="80" font-size="20" fill="#B0E0E6">❄</text>
+  <text x="55" y="80" font-size="20" fill="#B0E0E6">❄</text>
+</svg>

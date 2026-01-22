@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get real-time weather forecasts for major European cities">
+    <title>Europe Weather Forecast</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🌍 Europe Weather Forecast</h1>
+            <p>Real-time weather information for European cities</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-controls">
+                <select id="city-select" class="city-select">
+                    <option value="">Select a city...</option>
+                </select>
+                <button id="search-btn" class="search-btn">Get Weather</button>
+            </div>
+            <div id="error-message" class="error-message"></div>
+        </section>
+
+        <!-- Weather Display Section -->
+        <section id="weather-display" class="weather-display">
+            <div class="weather-main">
+                <h2 id="city-name" class="city-name">--</h2>
+                <img id="weather-icon" class="weather-icon" src="" alt="Weather icon">
+                <div id="temperature" class="temperature">--°C</div>
+                <div id="weather-description" class="weather-description">--</div>
+            </div>
+            
+            <div class="weather-details">
+                <div class="detail-item">
+                    <div class="detail-label">Humidity</div>
+                    <div id="humidity" class="detail-value">--%</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Wind Speed</div>
+                    <div id="wind-speed" class="detail-value">-- km/h</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/cities.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
